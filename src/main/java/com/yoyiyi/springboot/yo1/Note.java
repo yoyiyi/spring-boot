@@ -39,9 +39,19 @@ public class Note {
          *          2.在application.   设置spring.profile.active = dev
          *
          *8.spring boot 原理
+         *      @SpringBootApplication 主要自动组合下面三种注解
+         *              @Configuration
+         *              @EnableAutoConfiguration 核心
+         *                          @import
+         *                                  EnableAutoConfigurationImportSelector使用SpringFactoriesLoader.loadFactoryNames
+         *                                  方法来扫描具有META-INF/spring.factories文件的jar包，spring-boot-autoconfigure-x.x.x.x.jar
+         *                                  里就有一个spring.factories文件，这个文件中声明了有哪些要自动配置。
+         *              @ComponentScan
          *
-         *
-         *
+         *9. @ConditionalOnClass：该注解的参数对应的类必须存在，否则不解析该注解修饰的配置类；
+         *   @ConditionalOnMissingBean：该注解表示，如果存在它修饰的类的bean，则不需要再创建这个bean；
+         *   可以给该注解传入参数例如@ConditionOnMissingBean(name = "example")，这个表示如果name为“example”的bean存在，
+         *   这该注解修饰的代码块不执行。
          *
          *
          *
