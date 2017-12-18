@@ -12,9 +12,12 @@ public class Node {
         /**
          *1.@{}  引用静态资源
          *2.${}  访问属性
-         *
-         *
-         *
+         *3.循环 th:each="person:${people}"
+         *4.判断 th:if="${not #list.isEmpty(person)}"
+         *5.<script th:inline="javascript">
+         *     var single = [[${singlePerson}]]
+         *  </script>
+         * 6.th:onclick='"getName(\"+${person.name}+"\")"
          *
          *
          *
